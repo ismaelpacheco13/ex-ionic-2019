@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ejercicio 1</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Cantidad de polos</ion-label>
+      <ion-input (keyup)="calcularPrecio()" min="20" [(ngModel)]="cantidad"></ion-input>
+    </ion-item>
+    <ion-radio-group (ionChange)="calcularPrecio()" [(ngModel)]="blancoColor">
+      <ion-list-header>
+        <ion-label>Blanco o color</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>Blanco</ion-label>
+        <ion-radio slot="start" value="blanco"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Color</ion-label>
+        <ion-radio slot="start" value="color"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+    <ion-radio-group (ionChange)="calcularPrecio()" [(ngModel)]="serigrafiaBordado">
+      <ion-list-header>
+        <ion-label>Serigrafía o bordado</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>Serigrafía</ion-label>
+        <ion-radio slot="start" value="serigrafía"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Bordado</ion-label>
+        <ion-radio slot="start" value="bordado"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <br>
+  Cantidad de polos: {{ cantidad }}
+  <br>
+  Blanco o color: {{ blancoColor }}
+  <br>
+  Serigrafía o bordado: {{ serigrafiaBordado }}
+  <br>
+  <p>EL POLO BONITO - PRESUPUESTO</p>
+  <br>
+  Polo en color (unid.)     {{ cantidad }}
+  <br>
+  Precio unitario: {{ precioUnitario | currency:'EUR' }}
+  <br>
+  Total textil: {{ totalTextil | currency:'EUR' }}
+  <br>
+  Serigrafía (c.u.): {{ precioUnitarioSerigrafia | currency:'EUR' }}
+  <br>
+  Total serigrafía: {{ totalSerigrafia | currency:'EUR' }}
+  <br>
+  Polo más logotipo: {{ poloMasLogotipo | currency:'EUR' }}
+  <br>
+  IVA: {{ iva | currency:'EUR' }}
+  <br>
+  TOTAL: {{ total | currency:'EUR' }}
+
+</ion-content>
